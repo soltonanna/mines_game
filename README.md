@@ -5,7 +5,7 @@
 <img src="src/media/Mines_3.png" width="400px" />
 <br />
 
-## Pig Game 
+## Mines 
 
 
 ## Rule of game:
@@ -32,3 +32,6 @@ Don't forget install live-server, if you haven't it
 ```sh
 npm install -g live-server
 ```
+
+## Demo
+<a href='https://soltonanna.github.io/mines_game/' target='_blank'>DEMO</a>
