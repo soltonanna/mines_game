@@ -1,5 +1,6 @@
 ## Pig Game 
 
+
 ## Rule of game:
 1. Start by choosing one of the three default board sizes, or by selecting a custom board;
 2. The game begins with the board covered in tiles. Click on any tile to uncover it;
