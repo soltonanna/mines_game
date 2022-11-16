@@ -1,0 +1,174 @@
+@import "variables";
+@import "mixins";
+
+*,
+*::after,
+*::before {
+   @include null_styles();
+}
+
+html {
+   font-size: 62.5%; 
+
+   @include respond(tab-land) {
+       font-size: 56.25%;
+   }
+
+   @include respond(tab-port) {
+       font-size: 50%;
+   }
+   
+   @include respond(big-desktop) {
+       font-size: 75%;
+   }
+}
+
+#root div.hidden {
+   display: none;
+}
+
+h1 {
+   color: $primary-color;
+   font-size: $font-size-title;
+}
+
+p {
+   font-size: $font-size-desc;
+   color: $font-color-black;
+   font-style: italic;
+}
+
+/* Welcome Page*/
+#welcome {
+   @include default_block();
+   @include flex(column, space-around, space-around, center);
+   text-align: center;
+
+   &__form {
+      margin: 3% auto 0;
+      
+      label {
+         margin-bottom: 20px;
+         font-size: $font-size-medium;
+         
+         @include flex(row, space-between, space-between, center);
+         
+         input {
+            width: 40%;
+            padding-left: 5px ;
+            font-size: $font-size-small;
+            &:focus{
+               outline: none;
+            }
+         }
+      }
+      
+      #start_game {
+         @include button($button-bgcolor-active, $font-color-white);
+      }
+      #start_game:hover{
+         background-color: $button-bgcolor-hover;
+      }
+   }
+}
+
+
+/* Game Area */
+#game_area {
+   @include flex(column,  center, center, center);
+   @include default_block();
+   position: relative;
+   
+   &__overlay{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+   }
+   &__mines {
+      line-height: 0;
+
+      div[class^="row_"] {
+         display: flex;
+      
+         div[class^="single_item_"] {
+            font-size: $font-size-medium;
+            background-color: $item-close;
+            border: 1px solid #dadada;
+            display: inline-block;
+            text-align: center;
+            line-height: 45px;
+            font-weight: 900;
+            width: 45px;
+            height: 45px;
+            margin: 1px;
+            cursor: pointer;
+            color: transparent;
+
+            &:hover{
+               background-color: $item-hover;
+            }
+            &.open {
+               cursor: default;
+               font-weight:700;
+               color: $font-color-black;
+               background-color: $item-open;
+               
+               &.find_mine {
+                  background-color: $item-mine;
+               }
+               &.color_1 {
+                  @include opened_colors(#cccc30);
+               }&.color_2 {
+                  @include opened_colors(#4fcc30);
+               }&.color_3 {
+                  @include opened_colors(#cc7630);
+               }&.color_4 {
+                  @include opened_colors(#3054cc);
+               }&.color_5 {
+                  @include opened_colors(#bf30cc);
+               }&.color_6 {
+                  @include opened_colors(#cc4730);
+               }&.color_7 {
+                  @include opened_colors(#30b5cc);
+               }&.color_8 {
+                  @include opened_colors(#be9b2a);
+               }
+            }
+
+            &.checked ,
+            &.unknown {
+               color: $font-color-black;
+               &.find_mine {
+                  background-color: $item-mine;
+               }
+            }
+         }
+      }
+   }
+   &__menu {
+      @include flex(column, space-between, space-between, center);
+
+      &__timer,
+      &__change_opt {
+         padding: 1.2rem 2rem;
+      }
+      &__timer,
+      &__flugs {
+         color: $primary-color;
+         font-size: $font-size-medium;
+         font-weight: 700;
+      }
+      &__change_opt {
+         @include button($button-bgcolor-active, $font-color-white);
+      }
+   }
+}
+#game_over {
+   @include flex(column, space-between, space-around, center);
+   margin: 2rem auto 0;
+   &__start_again {
+      @include button($button-bgcolor-active, $font-color-white);
+      display: block;
+      
+   }
+}

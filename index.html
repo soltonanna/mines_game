@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <title>Mines</title>
+</head>
+<body>
+    <div id="root">
+        <!-- Welcome Block-->
+        <div id="welcome">
+           <h1>Welcome to Mines Game</h1>
+           <p>Please choose the option before start the game</p>
+           <form id="welcome__form">
+              <label for="row">Height:
+                 <input type="number" id="row" value="" placeholder="10" /></label>
+              <label for="column">Width:
+                 <input type="number" id="column" value="" placeholder="10" /></label>
+              <label for="mines_count">Mines:
+                 <input type="number" id="mines_count" value="" placeholder="3" /></label>
+              <button id="start_game">Start Game</button>
+           </form>
+        </div>
+  
+        <!-- Game Block -->
+        <div id="game_area" class="hidden">
+           <div id="game_area__overlay" class="hidden"></div>
+           <div id="game_area__mines">
+              <!-- Generate the mines from js -->
+           </div>
+           <div id="game_area__menu">
+              <!-- TODO 
+              <div id="game_area__menu__timer">05:00</div>
+              <div id="game_area__menu__flags">⚑ 0/25</div>
+              -->
+              <button id="game_area__menu__change_opt">Change Options</button>
+           </div>
+        </div>
+  
+        <!-- Game Over/Win -->
+        <div id="game_over" class="hidden">
+           <!-- <img src="" id="game_over__finish_img" /> -->
+           <h1 id="game_over__finish_text"></h1>
+           <button id="game_over__start_again">Start Again</button>
+        </div>
+  
+     </div>
+     <script src="index.js"></script>
+</body>
+</html>

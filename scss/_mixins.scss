@@ -1,0 +1,57 @@
+@mixin null_styles(){
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin default_block(){
+    margin-top: 5rem;
+    border-radius:50px;
+
+    @include respond(tab-land) {
+        width: 80%;
+    }
+
+    @include respond(tab-port) {
+        width: 95%;
+    }
+}
+@mixin flex($flex-direction, $justify-content, $align-content, $align-items){
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-content: $align-content;
+    align-items: $align-items;
+}
+
+@mixin button($state_bgc, $state_color) {
+    background-color: $state_bgc;
+    font-size: $font-size-small;
+    color: $state_color;
+    
+    padding: 1.5rem 3rem;
+    border-radius:10px;
+    margin: 10px auto;
+    cursor: pointer;
+    border: none;
+}
+
+@mixin opened_colors($bg_color) {
+    background-color: $bg_color;
+}
+
+@mixin respond($breakpoint) {
+   @if $breakpoint == phone {
+       @media only screen and (max-width: 37.5em) { @content };    //600px
+   }
+   @if $breakpoint == tab-port {
+       @media only screen and (max-width: 56.25em) { @content };     //900px
+   }
+   @if $breakpoint == tab-land {
+       @media only screen and (max-width: 75em) { @content };    //1200px
+   }
+   @if $breakpoint == big-desktop {
+       @media only screen and (min-width: 112.5em) { @content };    //1800
+   }
+}
