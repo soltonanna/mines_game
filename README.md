@@ -1,3 +1,10 @@
+<img src="src/media/Mines_1.png" width="400px" />
+<br />
+<img src="src/media/Mines_2.png" width="400px" />
+<br />
+<img src="src/media/Mines_3.png" width="400px" />
+<br />
+
 ## Pig Game 
 
 
@@ -19,4 +26,9 @@ npm init
 
 ```sh
 npm start
+```
+
+Don't forget install live-server, if you haven't it
+```sh
+npm install -g live-server
 ```
