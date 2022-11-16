@@ -1,0 +1,10 @@
+@import 'mixins';
+@import 'variables';
+
+body {
+    background-color: $bodyColor;
+}
+
+h1 {
+    color: #ffffff;
+}
